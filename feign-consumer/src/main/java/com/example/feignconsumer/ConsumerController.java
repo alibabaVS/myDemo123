@@ -22,18 +22,17 @@ import javax.annotation.Resource;
 public class ConsumerController {
 
     private static final Logger logger = LoggerFactory.getLogger(ConsumerController.class);
-    @Resource
-    HelloService helloService;
 
     @Resource
     RefactorHelloService refactorHelloService;
 
     @RequestMapping("/feign-consumer")
     public String helloConsumer(){
-        String str = helloService.hello();
+//        String str = helloService.hello();
         logger.info("op=start_helloConsumer,>>>>>>>>>>>>>>>>>>>>>>> " );
+
         User str2 = refactorHelloService.hello("name",13);
-        logger.info("op=start_helloConsumer, {}",str2 );
-        return str;
+        logger.info("op=start_helloConsumer, {}>>>>>>>>>>>>>>>>>>>>>>",str2 );
+        return str2.toString();
     }
 }
