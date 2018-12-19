@@ -31,6 +31,10 @@ ext {
 dependencies {
     implementation('org.springframework.cloud:spring-cloud-config-server')
     implementation('org.springframework.cloud:spring-cloud-starter-config')
+    implementation('org.springframework.boot:spring-boot-starter-security')
+
+//    支持svn仓库
+    implementation('org.tmatesoft.svnkit:svnkit:1.8.10')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
